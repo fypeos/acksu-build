@@ -4,7 +4,7 @@ on:
     inputs:
       TAG:
         required: true
-        default: "android14-6.1-2023-06"
+        default: "android12-5.10-lts"
       ENABLE_KSU:
         required: true
         type: boolean
@@ -123,6 +123,7 @@ jobs:
         max-size: 2G
 
     - name: Make working directory clean to avoid dirty
+      if: inputs.ENABLE_KSU == true
       working-directory: android-kernel
       run: cd common/ && git add -A && git commit -a -m "Add KernelSU"
 

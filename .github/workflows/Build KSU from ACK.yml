@@ -60,7 +60,7 @@ jobs:
       if: inputs.ENABLE_KSU == true
       run: |
         cd $GITHUB_WORKSPACE
-        git clone -b rsuntk-susfs152 https://github.com/vbajs/KernelSU.git
+        git clone https://github.com/tiann/KernelSU.git
         cd $GITHUB_WORKSPACE/android-kernel
         echo "[+] KernelSU setup"
         GKI_ROOT=$(pwd)
